@@ -1173,6 +1173,226 @@ section {
 }
 
 /* ===================================
+   Certifications Carousel
+   =================================== */
+.cert-carousel-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    padding: var(--spacing-lg);
+    overflow: hidden;
+}
+
+.cert-carousel-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--glass-border);
+}
+
+.cert-carousel-header i {
+    font-size: 1.75rem;
+    color: var(--primary-blue);
+}
+
+.cert-carousel-header h3 {
+    flex: 1;
+    font-size: 1.375rem;
+}
+
+.cert-counter {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.cert-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.cert-carousel {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: grab;
+    touch-action: pan-y pinch-zoom;
+}
+
+.cert-carousel:active {
+    cursor: grabbing;
+}
+
+.cert-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    padding: var(--spacing-sm) 0;
+}
+
+.cert-slide .cert-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.cert-slide .cert-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cert-slide .cert-info {
+    flex: 1;
+}
+
+.cert-slide .cert-info h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.375rem;
+    color: var(--text-primary);
+}
+
+.cert-slide .cert-provider {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.cert-slide .cert-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+}
+
+.cert-slide .cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+}
+
+.cert-slide .cert-skills span {
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--glass-border);
+}
+
+/* Carousel Nav */
+.cert-carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--glass-border);
+}
+
+.cert-prev-btn,
+.cert-next-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--glass-border);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.cert-prev-btn:hover,
+.cert-next-btn:hover {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+    transform: scale(1.1);
+}
+
+.cert-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 300px;
+}
+
+.cert-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: none;
+    padding: 0;
+}
+
+.cert-dot.active {
+    background: var(--primary-blue);
+    width: 24px;
+    border-radius: 4px;
+}
+
+.cert-dot:hover {
+    background: var(--text-tertiary);
+    transform: scale(1.2);
+}
+
+/* Light mode overrides for cert carousel */
+[data-theme="light"] .cert-carousel-section {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .cert-counter {
+    background: #E0E7FF;
+}
+
+[data-theme="light"] .cert-prev-btn,
+[data-theme="light"] .cert-next-btn {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+[data-theme="light"] .cert-dot {
+    background: #C7D2FE;
+}
+
+[data-theme="light"] .cert-slide .cert-skills span {
+    background: #EEF2FF;
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+
+
+/* ===================================
    Education Section
    =================================== */
 .education {

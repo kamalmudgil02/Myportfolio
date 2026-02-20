@@ -546,6 +546,100 @@ if (carousel && prevBtn && nextBtn && dots.length > 0) {
 }
 
 // ===================================
+// Certifications Carousel
+// ===================================
+(function initCertCarousel() {
+    const carousel = document.getElementById('certCarousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.cert-slide');
+    const totalEl = document.getElementById('certTotal');
+    const currentEl = document.getElementById('certCurrent');
+    const dotsContainer = document.getElementById('certDots');
+    const prevBtn = document.getElementById('certPrev');
+    const nextBtn = document.getElementById('certNext');
+
+    const total = slides.length;
+    let current = 0;
+    let startX = 0;
+    let isDragging = false;
+    let dragOffset = 0;
+
+    if (totalEl) totalEl.textContent = total;
+
+    // Build dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'cert-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Certificate ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    function updateUI() {
+        carousel.style.transform = `translateX(-${current * 100}%)`;
+        if (currentEl) currentEl.textContent = current + 1;
+        dotsContainer.querySelectorAll('.cert-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+        });
+        if (prevBtn) prevBtn.disabled = false;
+        if (nextBtn) nextBtn.disabled = false;
+    }
+
+    function goTo(index) {
+        current = (index + total) % total;
+        updateUI();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Touch drag
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+    }, { passive: true });
+
+    // Mouse drag
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        carousel.style.transition = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        dragOffset = e.clientX - startX;
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        carousel.style.transition = '';
+        if (Math.abs(dragOffset) > 50) goTo(dragOffset < 0 ? current + 1 : current - 1);
+        else updateUI();
+        dragOffset = 0;
+    });
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+        const section = document.getElementById('experience');
+        if (!section) return;
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            if (e.key === 'ArrowRight') goTo(current + 1);
+            if (e.key === 'ArrowLeft') goTo(current - 1);
+        }
+    });
+
+    updateUI();
+})();
+
+// ===================================
 // Console Message (Optional Easter Egg)
 // ===================================
 console.log('%c👋 Hello! Welcome to my portfolio', 'color: #2563eb; font-size: 20px; font-weight: bold;');
