@@ -66,6 +66,167 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
 }
 
+/* Light Mode Variables */
+[data-theme="light"] {
+    --bg-primary: #F8FAFF;
+    --bg-secondary: #EEF2FF;
+    --bg-tertiary: #E0E7FF;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-tertiary: #64748B;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(59, 130, 246, 0.2);
+    --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12);
+}
+
+/* Light mode component overrides */
+[data-theme="light"] .navbar {
+    background: rgba(248, 250, 255, 0.85);
+    border-bottom-color: rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="light"] .skill-category {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .skill-bar {
+    background: #E0E7FF;
+}
+
+[data-theme="light"] .project-card {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .tech-tag {
+    background: #EEF2FF;
+    color: #475569;
+}
+
+[data-theme="light"] .carousel-btn {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+[data-theme="light"] .dot {
+    background: #C7D2FE;
+}
+
+[data-theme="light"] .experience-card {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .certifications-card {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .skill-tag {
+    background: #EEF2FF;
+    border-color: rgba(59, 130, 246, 0.2);
+    color: #475569;
+}
+
+[data-theme="light"] .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .floating-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12);
+}
+
+[data-theme="light"] .hero-badge {
+    background: #E0E7FF;
+    color: #475569;
+}
+
+[data-theme="light"] .btn-secondary {
+    background: #E0E7FF;
+    color: #0F172A;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    background: #C7D2FE;
+}
+
+[data-theme="light"] .theme-toggle {
+    background: #E0E7FF;
+    color: #0F172A;
+}
+
+[data-theme="light"] .project-tag {
+    background: #EEF2FF;
+    color: var(--primary-blue);
+}
+
+[data-theme="light"] .contact-card {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .contact-form-wrap {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background: #F8FAFF;
+    border-color: rgba(59, 130, 246, 0.25);
+    color: #0F172A;
+}
+
+[data-theme="light"] .form-group input::placeholder,
+[data-theme="light"] .form-group textarea::placeholder {
+    color: #94A3B8;
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus {
+    background: #FFFFFF;
+    border-color: var(--primary-blue);
+}
+
+[data-theme="light"] .education-card {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .roadmap-card {
+    background: #FFFFFF;
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] footer {
+    background: #EEF2FF;
+    border-top-color: rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="light"] .mobile-toggle span {
+    background: #0F172A;
+}
+
+[data-theme="light"] .nav-menu {
+    background: rgba(248, 250, 255, 0.98);
+}
+
 /* ===================================
    Reset & Base Styles
    =================================== */
