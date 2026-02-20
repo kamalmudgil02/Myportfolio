@@ -387,6 +387,34 @@ section {
     align-items: center;
 }
 
+/* Resume button in Navbar */
+.btn-resume-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: white;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    white-space: nowrap;
+}
+
+.btn-resume-nav:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-resume-nav i {
+    font-size: 0.85rem;
+}
+
+
 .theme-toggle {
     background: var(--bg-tertiary);
     border: none;
@@ -514,6 +542,52 @@ section {
     background: var(--bg-secondary);
     transform: translateY(-2px);
 }
+
+/* Resume Download Button (Hero) */
+.btn-resume {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-resume::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.18);
+    transform: skewX(-20deg);
+    animation: resumeShimmer 2.5s infinite;
+}
+
+@keyframes resumeShimmer {
+    0% {
+        left: -75%;
+    }
+
+    60% {
+        left: 125%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+.btn-resume:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+}
+
+.btn-resume i {
+    font-size: 1.1rem;
+}
+
 
 .hero-stats {
     display: flex;
