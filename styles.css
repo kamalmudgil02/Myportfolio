@@ -414,6 +414,65 @@ section {
     font-size: 0.85rem;
 }
 
+/* Upload Resume — hero CTA button */
+.btn-upload-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+    color: white;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-upload-resume::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.18);
+    transform: skewX(-20deg);
+    animation: shimmer 3s infinite;
+}
+
+.btn-upload-resume:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.45);
+}
+
+/* Upload Resume — compact navbar icon button */
+.btn-upload-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(124, 58, 237, 0.15);
+    color: #A78BFA;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.btn-upload-nav:hover {
+    background: #7C3AED;
+    color: white;
+    border-color: #7C3AED;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.35);
+}
+
 
 .theme-toggle {
     background: var(--bg-tertiary);
